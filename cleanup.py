@@ -30,6 +30,6 @@ for ns in namespaces.items:
                 and secret.metadata.namespace != 'kube-system':
             try:
                 print('deleting', secret.metadata.namespace, secret.metadata.name)
-                # api.delete_namespaced_secret(secret.metadata.name, secret.metadata.namespace)
+                api.delete_namespaced_secret(secret.metadata.name, secret.metadata.namespace)
             except ApiException as e:
                 print('exception while deleting: ', e)
